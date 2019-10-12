@@ -48,6 +48,7 @@
         android:id="@+id/materialButton_loginFragment_login"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:text="Login"
         android:layout_marginTop="28dp"
         app:layout_constraintEnd_toEndOf="@+id/editText_loginFragment_password"
         app:layout_constraintStart_toStartOf="@+id/editText_loginFragment_password"
@@ -56,6 +57,7 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/materialButton_loginFragment_signUp"
         android:layout_width="0dp"
+        android:text="Create Account"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="@+id/materialButton_loginFragment_login"

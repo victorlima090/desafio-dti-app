@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/container_loginFinishFragment_savingView"
+        android:id="@+id/container_signupFinishFragment_savingView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:visibility="visible"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ProgressBar
-            android:id="@+id/contentLoadingProgressBar_loginFinishFragment_progress"
+            android:id="@+id/contentLoadingProgressBar_signupFinishFragment_progress"
             android:layout_width="138dp"
             android:layout_height="138dp"
             android:layout_marginTop="0dp"
@@ -43,7 +43,7 @@
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/contentLoadingProgressBar_loginFinishFragment_progress" />
+            app:layout_constraintTop_toBottomOf="@+id/contentLoadingProgressBar_signupFinishFragment_progress" />
 
         <TextView
             android:id="@+id/textView12"
@@ -60,7 +60,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/container_loginFinishFragment_errorView"
+        android:id="@+id/container_signupFinishFragment_errorView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:visibility="gone"
@@ -87,7 +87,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView_loginFinishFragment_operationStatus"
+            android:id="@+id/textView_signupFinishFragment_operationStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
@@ -99,7 +99,7 @@
 
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_loginFinishFragment_retry"
+            android:id="@+id/button_signupFinishFragment_retry"
             android:layout_width="0dp"
             android:layout_height="75dp"
             android:layout_marginStart="36dp"
@@ -109,12 +109,12 @@
             android:layout_marginBottom="8dp"
             android:letterSpacing="0"
             android:textAllCaps="false"
-            app:layout_constraintBottom_toTopOf="@+id/button_loginFinishFragment_cancel"
+            app:layout_constraintBottom_toTopOf="@+id/button_signupFinishFragment_cancel"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_loginFinishFragment_cancel"
+            android:id="@+id/button_signupFinishFragment_cancel"
             android:layout_width="0dp"
             android:layout_height="75dp"
             android:layout_marginStart="38dp"
@@ -134,7 +134,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/container_loginFinishFragment_successView"
+        android:id="@+id/container_signupFinishFragment_successView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:visibility="gone"
@@ -145,7 +145,7 @@
         tools:visibility="gone">
 
         <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/animation_loginFinishFragment_savingDone"
+            android:id="@+id/animation_signupFinishFragment_savingDone"
             android:layout_width="138dp"
             android:layout_height="138dp"
             android:layout_marginTop="8dp"
@@ -168,7 +168,7 @@
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/animation_loginFinishFragment_savingDone" />
+            app:layout_constraintTop_toBottomOf="@+id/animation_signupFinishFragment_savingDone" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
