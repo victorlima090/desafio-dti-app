@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".login.LoginFragment">
+
+    <TextView
+        android:id="@+id/textView_loginFragment_loginTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="176dp"
+        android:text="@string/login"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText_loginFragment_login"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView_loginFragment_loginTitle"
+        app:layout_constraintTop_toBottomOf="@+id/textView_loginFragment_loginTitle" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/password"
+        app:layout_constraintStart_toStartOf="@+id/editText_loginFragment_login"
+        app:layout_constraintTop_toBottomOf="@+id/editText_loginFragment_login" />
+
+    <EditText
+        android:id="@+id/editText_loginFragment_password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButton_loginFragment_login"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="@+id/editText_loginFragment_password"
+        app:layout_constraintStart_toStartOf="@+id/editText_loginFragment_password"
+        app:layout_constraintTop_toBottomOf="@+id/editText_loginFragment_password" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButton_loginFragment_signUp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/materialButton_loginFragment_login"
+        app:layout_constraintStart_toStartOf="@+id/materialButton_loginFragment_login"
+        app:layout_constraintTop_toBottomOf="@+id/materialButton_loginFragment_login" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
