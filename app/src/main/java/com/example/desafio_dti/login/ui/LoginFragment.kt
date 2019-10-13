@@ -1,4 +1,4 @@
-package com.example.desafio_dti.login
+package com.example.desafio_dti.login.ui
 
 import android.os.Bundle
 import android.text.Editable
@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.NavHostFragment
 
 import com.example.desafio_dti.R
@@ -59,8 +60,14 @@ class LoginFragment : Fragment(), TextWatcher {
 
     private fun setupListeners() {
         materialButton_loginFragment_login.setOnClickListener {
-            tryToLogin()
+            tryToLogin(simulateError = false)
         }
+
+        materialButton_loginFragment_login.setOnLongClickListener {
+            tryToLogin(simulateError = true)
+            true
+        }
+
 
         materialButton_loginFragment_signUp.setOnClickListener {
             goToSignUp()
@@ -72,14 +79,14 @@ class LoginFragment : Fragment(), TextWatcher {
             .navigate(R.id.action_loginFragment_to_signUpFragment)
     }
 
-    private fun tryToLogin() {
-
+    private fun tryToLogin(simulateError:Boolean) {
+        val bundle = bundleOf("simulateError" to simulateError)
         mLoginViewModel.saveLoginAndPassword(
             editText_loginFragment_login.text.toString(),
             editText_loginFragment_password.text.toString()
         )
         NavHostFragment.findNavController(this@LoginFragment)
-            .navigate(R.id.action_loginFragment_to_loginFinishFragment)
+            .navigate(R.id.action_loginFragment_to_loginFinishFragment,bundle)
     }
 
 

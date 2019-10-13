@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.desafio_dti.login.LoginFragment"
+        android:name="com.example.desafio_dti.login.ui.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -19,12 +19,16 @@
     </fragment>
     <fragment
         android:id="@+id/loginFinishFragment"
-        android:name="com.example.desafio_dti.login.LoginFinishFragment"
+        android:name="com.example.desafio_dti.login.ui.LoginFinishFragment"
         android:label="fragment_login_finish"
-        tools:layout="@layout/fragment_login_finish" />
+        tools:layout="@layout/fragment_login_finish" >
+        <action
+            android:id="@+id/action_loginFinishFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.example.desafio_dti.login.SignUpFragment"
+        android:name="com.example.desafio_dti.login.ui.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" >
         <action
@@ -33,10 +37,15 @@
     </fragment>
     <fragment
         android:id="@+id/signUpFinishFragment"
-        android:name="com.example.desafio_dti.login.SignUpFinishFragment"
+        android:name="com.example.desafio_dti.login.ui.SignUpFinishFragment"
         android:label="SignUpFinishFragment" >
         <action
             android:id="@+id/action_signUpFinishFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.desafio_dti.main.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
 </navigation>

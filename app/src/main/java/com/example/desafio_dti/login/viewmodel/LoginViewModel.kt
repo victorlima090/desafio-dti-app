@@ -4,7 +4,10 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.example.desafio_dti.login.model.LoginRequest
+import com.example.desafio_dti.login.model.SignUpRequest
 import com.example.desafio_dti.shared.Operation
+import com.example.desafio_dti.shared.api.MainApi
 import kotlinx.coroutines.*
 
 class LoginViewModel(androidApplication: Application):AndroidViewModel(androidApplication) {
@@ -23,24 +26,28 @@ class LoginViewModel(androidApplication: Application):AndroidViewModel(androidAp
 
     fun getPassword() = mPassword
 
-    fun tryToLogin():LiveData<Operation<Boolean>>{
+    fun tryToLogin(simulateError:Boolean):LiveData<Operation<Boolean>>{
         val loginOperation = MutableLiveData<Operation<Boolean>>()
         loginOperation.value = Operation.running()
         ioScope.launch {
-            //try to login
-            delay(3000)
-            loginOperation.postValue(Operation.error("", null))
+            delay(1000)
+            val loginRequest = LoginRequest(mLogin, mPassword)
+            val response = MainApi.getMainApi().login(loginRequest, simulateError).execute()
+            val operationSucceded = response.isSuccessful && response.body()?.errorMessage.isNullOrBlank()
+            loginOperation.postValue(Operation.success(operationSucceded))
         }
         return loginOperation
     }
 
-    fun tryToSignUp():LiveData<Operation<Boolean>>{
+    fun tryToSignUp(simulateError:Boolean):LiveData<Operation<Boolean>>{
         val signUpOperation = MutableLiveData<Operation<Boolean>>()
         signUpOperation.value = Operation.running()
         ioScope.launch {
-            //try to login
-            delay(2000)
-            signUpOperation.postValue(Operation.error("", null))
+            delay(1000)
+            val signUpRequest = SignUpRequest(mLogin, mPassword)
+            val response = MainApi.getMainApi().setNewUser(signUpRequest, simulateError).execute()
+            val operationSucceded = response.isSuccessful && response.body()?.errorMessage.isNullOrBlank()
+            signUpOperation.postValue(Operation.success(operationSucceded))
         }
         return signUpOperation
     }

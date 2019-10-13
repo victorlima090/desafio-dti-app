@@ -1,4 +1,4 @@
-package com.example.desafio_dti.login
+package com.example.desafio_dti.login.ui
 
 
 import android.os.Bundle
@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.NavHostFragment
 
 import com.example.desafio_dti.R
@@ -41,6 +42,17 @@ class SignUpFragment : Fragment(), TextWatcher {
             )
             NavHostFragment.findNavController(this@SignUpFragment)
                 .navigate(R.id.action_signUpFragment_to_signUpFinishFragment)
+        }
+
+        materialButton_signupFragment_signup.setOnLongClickListener {
+            val bundle = bundleOf("simulateError" to true)
+            NavHostFragment.findNavController(this@SignUpFragment)
+                .navigate(R.id.action_signUpFragment_to_signUpFinishFragment, bundle)
+            true
+        }
+
+        imageView_signUpFragment_goBack.setOnClickListener{
+            activity?.onBackPressed()
         }
     }
 
